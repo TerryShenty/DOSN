@@ -1,2 +1,2 @@
 # DOSN
-Research on Decentralized Online Social Networks
+ My research on Decentralized Online Social Networks @ Fudan University
