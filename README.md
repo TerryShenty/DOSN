@@ -21,6 +21,17 @@ Despite the growing popularity of DOSNs, **three key research gaps** hinder effe
 
 This project aims to fill these gaps through empirical analysis and framework construction.
 
+## 📂 Repository Structure
+
+| Directory | Description |
+| :--- | :--- |
+| [**docs/**](./docs/) | Detailed research paper (PDF) and presentation slides. |
+| [**data/**](./data/) | Standardized datasets, interaction matrices, and data dictionary. |
+| [**src/preprocessing/**](./src/preprocessing/) | Scripts for data cleaning, event deduplication, and format standardization. |
+| [**src/behavior_analysis/**](./src/behavior_analysis/) | **(RQ1)** Code for CIIR calculation, OLS regression, and GAM fitting. |
+| [**src/semantic_analysis/**](./src/semantic_analysis/) | **(RQ2)** Louvain community detection and topic entropy analysis. |
+| [**src/system_analysis/**](./src/system_analysis/) | **(RQ3)** Centrality metrics (Katz/Betweenness) and Gini sensitivity scanning. |
+
 ## ❓ Research Questions (RQs)
 
 We focus on three interrelated research questions across three layers:
