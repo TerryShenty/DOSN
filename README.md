@@ -56,7 +56,7 @@ To ensure data quality, we performed three key steps:
 | `interaction_matrix.csv` | Interaction counts (reply/favourite/reblog) between instance pairs |
 | `instance_interaction_stat.csv` | Detailed intra/cross-instance interaction statistics for each instance |
 
-## 🛠 Methodology & Analytical Pipeline (Enhanced)
+## 🛠 Methodology & Analytical Pipeline
 
 To investigate the three-layer governance framework, we employed a pipeline integrating statistical modeling, network science, and Natural Language Processing (NLP):
 
@@ -70,12 +70,15 @@ $$
 *   **Statistical Modeling:** Used Ordinary Least Squares (OLS) Regression with quadratic terms and Generalized Additive Models (GAM) to capture non-linear relationships between instance size (log-transformed) and CIIR.
 *   **Grouping & ANOVA:** Categorized instances into **Small**, **Medium**, and **Large** based on active users to test for significant differences in interaction openness.
 
+
+
 ### 2. Semantic Structure Layer (RQ2)
 *   **Community Detection:** Applied the **Louvain Algorithm** to the instance interaction network to identify structural clusters.
 *   **Homogeneity Measurement:**
     *   Utilized **Information Entropy** to measure the concentration of languages and topics within each community.
     *   Calculated **Jaccard Similarity** to assess the overlap of interests between different linguistic groups.
 *   **NLP Processing:** Employed **TF-IDF** for keyword extraction from instance descriptions to define "Topic Profiles."
+
 
 ### 3. System Architecture Layer (RQ3)
 *   **Multidimensional Centrality:** Instead of simple degree centrality, we developed a composite index:
@@ -84,6 +87,7 @@ $$
     *   **Betweenness Centrality:** Identifying "bridge" instances that control information flow.
 *   **Concentration Analysis:** Used the **Gini Coefficient** to quantify the inequality of influence distribution.
 *   **Sensitivity Scanning:** Conducted a **K-point scan** ($k=3$ to $30$) to observe how the Gini coefficient of core vs. peripheral networks fluctuates as the number of "core instances" increases.
+
 
 ---
 
@@ -95,16 +99,28 @@ $$
 *   **Small Instances:** Often remain isolated due to low activity.
 *   **Medium Instances** (Peak at ~20-50 active users): Exhibit the highest CIIR, serving as the "**active ambassadors**" of the federation.
 *   **Large Instances:** Show a "**Centripetal Effect**," where users tend to interact internally, creating a risk of "de facto centralization."
+<p align="center">
+  <img src="./figures/pic1.png" width="30%">
+</p>
 
 ### 2. Dual-Track Semantic Structure: "Language as Border, Topic as Bridge"
 *   **Linguistic Segregation:** Language is the strongest predictor of community boundaries. Users naturally cluster with others speaking the same language, forming stable "**cultural silos**."
 *   **Inter-community Connectivity:** Interestingly, while languages divide, specific **topics** (e.g., Technology, Art, Gaming) act as bridges. A community might be linguistically homogeneous but topically diverse, allowing information to jump across language barriers through shared interests.
+
+<p align="center">
+  <img src="./figures/pic2.png" width="30%">
+</p>
+
 
 ### 3. The "3–7 Core" Steady-State Window
 Our structural analysis revealed a critical threshold for decentralized health:
 
 *   **Optimal Stability:** When the top **3 to 7 instances** share the core influence, the network maintains a healthy balance between efficiency and decentralization.
 *   **Centralization Reversion:** Once the core expands beyond 7 instances or shrinks below 3, the Gini coefficient of the core network rises sharply, indicating that a few "**super-nodes**" are beginning to dominate the system, threatening the federated nature of the platform.
+
+<p align="center">
+  <img src="./figures/pic3.png" width="30%">
+</p>
 
 ## 🚀 Contributions
 
@@ -125,11 +141,8 @@ Our structural analysis revealed a critical threshold for decentralized health:
 1.  **Dataset Access**  
     Download the original dataset from [Zenodo](https://zenodo.org/records/14869106) and use the preprocessing scripts in `/data_cleaning` to generate standardized datasets.
 
-2.  **Analysis Reproduction**  
-    Run the analysis notebooks in `/notebooks` for RQ1-RQ3, including regression models, community detection, and centrality calculations.
-
-3.  **Governance Tools**  
-    Use the `governance_metrics/` scripts to compute CIIR, Gini coefficients, and core scale sensitivity for custom DOSN data.
+2.  **Full Paper & Slides**  
+    [!IMPORTANT] For more detailed research methodology and findings, please refer to the `/docs` folder for the full paper and presentation slides.
 
 ## ⚠️ Limitations & Future Work
 
