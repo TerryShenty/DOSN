@@ -100,7 +100,7 @@ $$
 *   **Medium Instances** (Peak at ~20-50 active users): Exhibit the highest CIIR, serving as the "**active ambassadors**" of the federation.
 *   **Large Instances:** Show a "**Centripetal Effect**," where users tend to interact internally, creating a risk of "de facto centralization."
 <p align="center">
-  <img src="./figures/pic1.png" width="30%">
+  <img src="./figures/pic1.png" width="50%">
 </p>
 
 ### 2. Dual-Track Semantic Structure: "Language as Border, Topic as Bridge"
@@ -108,7 +108,7 @@ $$
 *   **Inter-community Connectivity:** Interestingly, while languages divide, specific **topics** (e.g., Technology, Art, Gaming) act as bridges. A community might be linguistically homogeneous but topically diverse, allowing information to jump across language barriers through shared interests.
 
 <p align="center">
-  <img src="./figures/pic2.png" width="30%">
+  <img src="./figures/pic2.png" width="50%">
 </p>
 
 
@@ -119,7 +119,7 @@ Our structural analysis revealed a critical threshold for decentralized health:
 *   **Centralization Reversion:** Once the core expands beyond 7 instances or shrinks below 3, the Gini coefficient of the core network rises sharply, indicating that a few "**super-nodes**" are beginning to dominate the system, threatening the federated nature of the platform.
 
 <p align="center">
-  <img src="./figures/pic3.png" width="30%">
+  <img src="./figures/pic3.png" width="50%">
 </p>
 
 ## 🚀 Contributions
@@ -138,11 +138,22 @@ Our structural analysis revealed a critical threshold for decentralized health:
 
 ## 🛠️ Usage
 
-1.  **Dataset Access**  
-    Download the original dataset from [Zenodo](https://zenodo.org/records/14869106) and use the preprocessing scripts in `/data_cleaning` to generate standardized datasets.
+### 1. Dataset Access
+Download the original dataset from [Zenodo](https://zenodo.org/records/14869106) or directly get standardized datasets used here for the project from the [data/](./data/) folder .
 
-2.  **Full Paper & Slides**  
-    [!IMPORTANT] For more detailed research methodology and findings, please refer to the `/docs` folder for the full paper and presentation slides.
+### 2. Research Resources
+> [!IMPORTANT]
+> For the complete theoretical framework and detailed empirical results, please refer to the [docs/](./docs/) folder for the full paper and presentation slides.
+
+### 3. Source Code & Analysis
+All source code for experimental analysis is located in the [`/src`](./src/) directory, organized by research layer:
+
+* **Data Preprocessing (`/src/preprocessing/`):** Scripts for data cleaning, format standardization, and event deduplication.
+* **Behavioral Analysis (`/src/behavior_analysis/`):** Implementation of CIIR calculation, OLS regression, and GAM modeling for **RQ1**.
+* **Semantic Analysis (`/src/semantic_analysis/`):** Louvain community detection and topic entropy calculations for **RQ2**.
+* **System Architecture (`/src/system_analysis/`):** Multidimensional centrality (Katz, Betweenness) and Gini coefficient sensitivity scanning for **RQ3**.
+
+To reproduce the findings, we recommend following the order: `Preprocessing` -> `Analysis` -> `Visualization`.
 
 ## ⚠️ Limitations & Future Work
 
